@@ -6,8 +6,6 @@ import * as apiGateway from 'aws-cdk-lib/aws-apigateway';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as logs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
-import { ASSET_RESOURCE_METADATA_DOCKER_BUILD_ARGS_KEY } from 'aws-cdk-lib/cx-api';
-import { LambdaInvoke } from 'aws-cdk-lib/aws-stepfunctions-tasks';
 
 export class CdkRestapiStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
