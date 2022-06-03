@@ -45,7 +45,97 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 
 8) [Integration Request]를 선택합니다.
 
-![image](https://user-images.githubusercontent.com/52392004/171766324-668b6b34-cd9d-4464-9b45-58510fd298bf.png)
+![noname](https://user-images.githubusercontent.com/52392004/171766449-949fdbe8-3e19-41db-81bb-8a4330d5763b.png)
+
+9) 아래와 같이 [Mapping Template]에서 [When there are no template defined (/recommended)]를 선택하고, [Add mapping templates]를 선택합니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/171767054-f4cf24b8-d639-4b0f-b581-f92a53ef007d.png)
+
+10) [Content-type]으로 "application/json"을 입력하고 오른쪽의 선택 버튼을 누릅니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/171767396-55d4f612-cce2-46b6-ad65-d2e3cdae88d7.png)
+
+11) 아래와 같이 [Generate template]를 선택한후 [Method Request passthrough]를 선택합니다. 이후에 기본 template이 자동으로 입력되면 [Save]를 선택됩니다.
+
+
+![noname](https://user-images.githubusercontent.com/52392004/171767662-fae7a997-f046-4b4e-a388-0cf31e8fccfe.png)
+
+
+## 수정된 API Gateway 배포
+
+1) 아래처럼 [Actions] - [Deploy API]를 선택합니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/171768185-72f33e99-ef0f-4d34-a1d2-a69d540dc4f6.png)
+
+2) [Deploy API]에서 [Deployment state]를 선택합니다. 여기서는 기 생성했던 "dev"를 선택합니다. 이후 [Deploy]를 선택하여 배포합니다. 
+
+
+## QueryString 동작 시험 
+
+1) Postman에서 "Invoke URL"에 API 이름인 "/status"를 추가하고 Query string을 "?deviceid=a1234567890"과 같이 입력합니다. 또는 아래처럼 Params에서 Key/Value 형태로 입력할 수도 있습니다. 이후 [Send]버튼을 선택합니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/171768665-4293fc60-94e9-4b5f-ae04-6e04c7c0b466.png)
+
+2) Cloudwatch에서 "lambda-for-status"에 대한 로그를 확인 합니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/171768773-5bb3908a-61c4-415f-b696-d2274feaf42e.png)
+
+로그로 확인한 event의 내용은 아래와 같습니다. 
+
+```java
+{
+    "body-json": {},
+    "params": {
+        "path": {},
+        "querystring": {
+            "deviceid": "a1234567890"
+        },
+        "header": {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Host": "sample7t6z5.execute-api.ap-northeast-2.amazonaws.com",
+            "Postman-Token": "fa633e40-180f-421a-940c-14229c351c00",
+            "User-Agent": "PostmanRuntime/7.29.0",
+            "X-Amzn-Trace-Id": "Root=1-629960f6-609cf7c67a6f7ade6bdc6253",
+            "X-Forwarded-For": "154.139.219.117",
+            "X-Forwarded-Port": "443",
+            "X-Forwarded-Proto": "https"
+        }
+    },
+    "stage-variables": {},
+    "context": {
+        "account-id": "",
+        "api-id": "8m1vc7t6z5",
+        "api-key": "",
+        "authorizer-principal-id": "",
+        "caller": "",
+        "cognito-authentication-provider": "",
+        "cognito-authentication-type": "",
+        "cognito-identity-id": "",
+        "cognito-identity-pool-id": "",
+        "http-method": "GET",
+        "stage": "dev",
+        "source-ip": "54.239.119.17",
+        "user": "",
+        "user-agent": "PostmanRuntime/7.29.0",
+        "user-arn": "",
+        "request-id": "ad30c506-de6f-4f5a-ad64-f402f687492c",
+        "resource-id": "j0ypwc",
+        "resource-path": "/status"
+    }
+}
+```
+
+"params" - "querystring"에서 아래와 같은 입력된 "deviceid"를 확인 할 수 있습니다.
+
+```java
+"querystring": {
+  "deviceid": "a1234567890"
+}
+```
+
+
+
 
 
 
