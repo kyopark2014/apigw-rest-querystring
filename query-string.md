@@ -31,6 +31,23 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 
 ![image](https://user-images.githubusercontent.com/52392004/171764819-fad755c5-1299-4287-8a3e-62580d7f8597.png)
 
+아래처럼, [Settings] - [Request Validator]에서 [Validate query string parameters and headers]를 선택하면, Warning이 사라집니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/171765675-a0cdecae-a34d-401b-bafa-b2fddc5eabdc.png)
 
 
-7) 
+
+7) 상단의 [Method Execution]으로 이동합니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/171765971-71184944-794b-4c05-8e8b-87db6716fee7.png)
+
+
+
+8) [Integration Request]를 선택합니다.
+
+![image](https://user-images.githubusercontent.com/52392004/171766324-668b6b34-cd9d-4464-9b45-58510fd298bf.png)
+
+
+
+
+
