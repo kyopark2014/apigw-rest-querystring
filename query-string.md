@@ -55,10 +55,20 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 
 ![noname](https://user-images.githubusercontent.com/52392004/171767396-55d4f612-cce2-46b6-ad65-d2e3cdae88d7.png)
 
+참고로 아래와 같이 Contents-Type header가 없는 경우에 application/json Template이 mapping 됩니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/171820560-d8deb3a2-fe2a-4269-bf09-069ebfeccc27.png)
+
+
+
 11) 아래와 같이 [Generate template]를 선택한후 [Method Request passthrough]를 선택합니다. 이후에 기본 template이 자동으로 입력되면 [Save]를 선택됩니다.
 
 
 ![noname](https://user-images.githubusercontent.com/52392004/171767662-fae7a997-f046-4b4e-a388-0cf31e8fccfe.png)
+
+
+기본 제공되는 template을 아래와 같이 변경 할 수도 있습니다.
+
 
 
 ## 수정된 API Gateway 배포
@@ -135,9 +145,11 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 ```
 
 
+## Reference 
 
+[How do I get an API Gateway REST API to pass query string parameters to Lambda or an HTTP endpoint?](https://www.youtube.com/watch?v=aQHK8XrQmSs)
 
+[Configure path & query string parameters and pass to lambda function - Amazon API Gateway p7](https://www.youtube.com/watch?v=trJgibvLGQc&t=789s)
 
-
-
+[API Gateway GET Method Request URL Query String Parameters using AWS CDK](https://stackoverflow.com/questions/68845918/api-gateway-get-method-request-url-query-string-parameters-using-aws-cdk)
 
