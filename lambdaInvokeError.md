@@ -42,10 +42,20 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 ![noname](https://user-images.githubusercontent.com/52392004/171850074-daace913-238a-430d-958d-ee18c769675d.png)
 
 
-## 수정된 
-ㅂㅏㅇ
+## 수정된 API Gateway 배포 
+
+1) 아래와 같이 [Actions] - [Deploy API]를 선택합니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/171850463-e80f1659-d53c-46b5-b971-e43fecaf9ce6.png)
 
 
+2) [Deployment stage]에서 배포할 stage를 선택합니다. 여기서는 "dev"를 선택합니다. 이후 [Deploy] 버튼을 선택하여 배포합니다. 
+
+![noname](https://user-images.githubusercontent.com/52392004/171850800-e5435ff9-5dc3-4244-8c43-2f5fcdecee41.png)
+
+3) Postman을 통해 "Invoke URL" + "/status" + query string을 입력시 아래와 같이 정상적으로 200OK와 함께 deviceid를 확인 할 수 있습니다.
+
+![image](https://user-images.githubusercontent.com/52392004/171851017-a0e8bc07-948c-4d0e-8775-59dcddf6c818.png)
 
 
 
