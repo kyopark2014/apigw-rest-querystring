@@ -8,9 +8,7 @@
 ```java
 #set($inputRoot = $input.path('$'))
 {
-    "queryStringParameters": {
-        "deviceid": "$input.params('deviceid')"
-    }
+    "deviceid": "$input.params('deviceid')"
 }
 ```
 
@@ -18,9 +16,7 @@
 
 ```java
 {
-    "queryStringParameters": {
-        "deviceid": "a1234567890"
-    }
+    "deviceid": "a1234567890"
 }
 ```
 
