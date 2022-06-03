@@ -55,7 +55,7 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 
 3) Postman을 통해 "Invoke URL" + "/status" + query string을 입력시 아래와 같이 정상적으로 200OK와 함께 deviceid를 확인 할 수 있습니다.
 
-![image](https://user-images.githubusercontent.com/52392004/171851017-a0e8bc07-948c-4d0e-8775-59dcddf6c818.png)
+![noname](https://user-images.githubusercontent.com/52392004/171851177-7c0d527f-8856-4e7f-91be-2e4c46bfa7f6.png)
 
 
 
