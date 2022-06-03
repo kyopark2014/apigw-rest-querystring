@@ -1,6 +1,6 @@
 ## 사용자 정의 Template
 
-querystring으로 등록된 deviceid를 가지고 아래처럼 json파일을 생성할 수 있습니다.
+[RESTful API에 Query String 사용하기](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/query-string.md)에 사용한 template을 변경하여, querystring으로 등록된 deviceid를 가져오는 event 구조를 용도에 맞게 변경하여 사용 할 수 있습니다. 
 
 ```java
 #set($inputRoot = $input.path('$'))
