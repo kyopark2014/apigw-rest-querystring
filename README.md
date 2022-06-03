@@ -1,4 +1,4 @@
-# API Gateway로 Qeury string을 포함한 RESTful API로 구현하기 
+# API Gateway로 Qeury string을 포함한 RESTful API 구현하기 
 
 
 ## API Gateway
