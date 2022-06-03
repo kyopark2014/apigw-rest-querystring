@@ -1,4 +1,4 @@
-## Lambda Invoke Error
+## Lambda Invoke Error 처리 방안 
 
 AWS CDK로 API Gateway를 만들고 Lambda 연결시 아래와 같은 에러와 함께 500 에러가 발생하고 있습니다. 이것은 Lambda Invoke 에러로 추청되나 CDK Code상에서 아직 해결하는 방법을 못찾고 있습니다.
 
