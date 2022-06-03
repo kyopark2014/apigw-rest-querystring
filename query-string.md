@@ -189,6 +189,9 @@ exports.handler = async (event) => {
 };
 ```
 
+## Reference 
+
+[AWS API Gateway: Mapping Template Cheatsheet](https://ncoughlin.com/posts/aws-api-gateway-cheatsheet/)
 
 
 
