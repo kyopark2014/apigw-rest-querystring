@@ -6,6 +6,8 @@ import * as apiGateway from 'aws-cdk-lib/aws-apigateway';
 import * as lambda from 'aws-cdk-lib/aws-lambda';
 import * as logs from 'aws-cdk-lib/aws-logs';
 import * as iam from 'aws-cdk-lib/aws-iam';
+import { ASSET_RESOURCE_METADATA_DOCKER_BUILD_ARGS_KEY } from 'aws-cdk-lib/cx-api';
+import { LambdaInvoke } from 'aws-cdk-lib/aws-stepfunctions-tasks';
 
 export class CdkRestapiStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -27,16 +29,18 @@ export class CdkRestapiStack extends Stack {
     });
 
     // log group api
-    const logGroup = new logs.LogGroup(this, 'AccessLogs', {
+    const logGroup = new logs.LogGroup(this, 'AccessLogs-restapi', {
       retention: 90, // Keep logs for 90 days
     });
     logGroup.grantWrite(new iam.ServicePrincipal('apigateway.amazonaws.com')); 
+
 
     // api-role
     const role = new iam.Role(this, "api-role", {
       roleName: "ApiRole",
       assumedBy: new iam.ServicePrincipal("apigateway.amazonaws.com")
     });
+
     role.addToPolicy(new iam.PolicyStatement({
       resources: ['*'],
       actions: ['lambda:InvokeFunction']
@@ -71,17 +75,30 @@ export class CdkRestapiStack extends Stack {
       },
     });   
 
+    // define template
+    const templateString: string = `#set($inputRoot = $input.path('$'))
+    {
+        "deviceid": "$input.params('deviceid')"
+    }`;
+
+    const requestTemplates = { // path through
+      'application/json': templateString,
+    };
+
     const status = apigw.root.addResource('status');
 
     status.addMethod('GET', new apiGateway.LambdaIntegration(lambdaStatus, {
       passthroughBehavior: apiGateway.PassthroughBehavior.WHEN_NO_TEMPLATES,  // options: NEVER
-      credentialsRole: role,
     //  requestTemplates: requestTemplates,
+      credentialsRole: role,
       integrationResponses: [{
         statusCode: '200',
       }], 
       proxy:false, 
     }), {
+      requestParameters: {
+        'method.request.querystring.deviceid': true,
+      },
       methodResponses: [   // API Gateway sends to the client that called a method.
         {
           statusCode: '200',
@@ -90,8 +107,8 @@ export class CdkRestapiStack extends Stack {
           }, 
         }
       ]
-    }); 
-
+    });
+    
     new cdk.CfnOutput(this, 'apiUrl', {
       value: apigw.url,
       description: 'The url of API Gateway',
