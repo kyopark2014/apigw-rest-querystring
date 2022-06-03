@@ -14,10 +14,20 @@
 
 [AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용하여 구현하는 예제를 보여줍니다. 
 
-### CDK 초기화 
+### CDK로 인프라 설치 
 
-typescript를 사용하기 위해 아래와 같이 CDK를 초기화 합니다. 
+typescript로 CDK를 구성합니다.
+
+1) 소스 다운로드 
 
 ```c
-$ cdk init app --language typescript
+$ git https://github.com/kyopark2014/apigw-rest-querystring
+```
+
+2) infra structure 설치하기
+
+```c
+$ cd cdk-restapi
+$ cdk synth
+$ cdk deploy
 ```
