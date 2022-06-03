@@ -17,7 +17,7 @@ API Gateway는 Client와 Service 사이에 있으면서 reverse proxy로 동작�
 
 ### Query Template 
 
-Template은 [VTL](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-programming-guide.html)을 이용하여 생성합니다. 
+Template은 [VTL(Apache Velocity Template Language)](https://docs.aws.amazon.com/appsync/latest/devguide/resolver-mapping-template-reference-programming-guide.html)을 이용하여 생성합니다. 
 
 [사용자 정의 Template](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/template.md)와 같이 별도의 tamplate를 지정하여 원하는 동작을 수행 할 수 있습니다. 
 
