@@ -139,3 +139,11 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 ```
 
 
+## Reference 
+
+[How do I get an API Gateway REST API to pass query string parameters to Lambda or an HTTP endpoint?](https://www.youtube.com/watch?v=aQHK8XrQmSs)
+
+[Configure path & query string parameters and pass to lambda function - Amazon API Gateway p7](https://www.youtube.com/watch?v=trJgibvLGQc&t=789s)
+
+[API Gateway GET Method Request URL Query String Parameters using AWS CDK](https://stackoverflow.com/questions/68845918/api-gateway-get-method-request-url-query-string-parameters-using-aws-cdk)
+
