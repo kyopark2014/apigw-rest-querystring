@@ -21,7 +21,7 @@ Template은 [VTL(Apache Velocity Template Language)](https://docs.aws.amazon.com
 
 ## 2. AWS CDK로 구현하기
 
-[AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용하여 구현하는 예제를 보여줍니다. 
+[AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용하여 Infrs Structure를 구성합니다. 
 
 ### CDK로 인프라 설치 
 
