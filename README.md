@@ -15,6 +15,11 @@ API Gateway는 Client와 Service 사이에 있으면서 reverse proxy로 동작�
 
 [RESTful API에 Query String 사용하기](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/query-string.md)에서는 Console에서 query string을 설정하고 배포하며, 실제 테스트한 결과를 확인합니다.
 
+### Query Template 
+
+[사용자 정의 Template](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/template.md)와 같이 별도의 tamplate를 지정하여 동작을 단순화 할 수 있습니다. 
+
+
 ## AWS CDK로 구현하기
 
 [AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용하여 구현하는 예제를 보여줍니다. 
