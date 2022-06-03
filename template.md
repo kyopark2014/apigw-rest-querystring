@@ -31,8 +31,8 @@ exports.handler = async (event) => {
     console.log('## ENVIRONMENT VARIABLES: ' + JSON.stringify(process.env));
     console.log('## EVENT: ' + JSON.stringify(event))
     
-    if(event['queryStringParameters']) {
-        let deviceid = event['queryStringParameters'].deviceid;
+    if(event['deviceid']) {
+        let deviceid = event['deviceid'];
         
         const response = {
             statusCode: 200,
