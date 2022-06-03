@@ -44,6 +44,8 @@ $ cdk synth
 $ cdk deploy
 ```
 
+3) Lambda Invoke 이슈를 위해 
+
 
 ## Reference 
 
