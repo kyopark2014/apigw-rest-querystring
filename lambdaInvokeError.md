@@ -12,7 +12,7 @@ AWS CDK로 API Gateway를 만들고 Lambda 연결시 아래와 같은 에러와 
 로그상 아래와 같은 이슈가 있는것으로 보여집니다.
 
 ```java
-2022-04-23T18:37:47.070+09:00	(1cb53717-ad5c-40fb-9f43-de32825e62e5) Execution failed due to configuration error: Unable to transform request
+2022-04-23T18:37:47.070+09:00	Execution failed due to configuration error: Unable to transform request
 ```
 
 ### 해결방안
