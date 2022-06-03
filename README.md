@@ -53,4 +53,4 @@ $ cdk deploy
 
 [Configure path & query string parameters and pass to lambda function - Amazon API Gateway p7](https://www.youtube.com/watch?v=trJgibvLGQc&t=789s)
 
-[API Gateway GET Method Request URL Query String Parameters using AWS CDK](https://stackoverflow.com/questions/68845918/api-gateway-get-method-request-url-query-string-parameters-using-aws-cdk)
+
