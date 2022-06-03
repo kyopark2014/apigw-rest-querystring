@@ -1,5 +1,10 @@
 # API Gateway로 Qeury string을 포함한 RESTful API로 구현하기 
 
+
+## API Gateway
+
+API Gateway는 Client와 Service 사이에 있으면서 reverse proxy로 동작하면서 client에서 service로의 routing을 합니다. 또한 인증, SSL 처리, 보안과 관련 작업을 할 수 있습니다. 
+
 ## AWS Console로 구현하기 
 
 ### API Gateway 생성
