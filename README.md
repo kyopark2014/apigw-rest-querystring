@@ -43,7 +43,7 @@ $ cdk deploy
 
 3) Lambda Invoke 이슈
 
-[Lambda Invoke Error](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/lambdaInvokeError.md)에 따라 Lambda Invoke 이슈를 처리할 경우에 정상적으로 API Gateway를 통해 Lambda를 Invoke 할 수 있습니다.
+[Lambda Invoke Error 처리 방안](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/lambdaInvokeError.md)을 따라 처리하면, Lambda Invoke 이슈를 해결하고 정상적으로 API Gateway를 통해 Lambda를 Invoke 할 수 있습니다.
 
 ## 3. 실행 결과 확인 
 
