@@ -44,7 +44,16 @@ $ cdk synth
 $ cdk deploy
 ```
 
-3) Lambda Invoke 이슈를 위해 
+3) Lambda Invoke 이슈
+
+[Lambda Invoke Error]에 따라 Lambda Invoke 이슈를 처리할 경우에 정상적으로 API Gateway를 통해 Lambda를 Invoke 할 수 있습니다.
+
+## 실행결과
+
+Postman을 통해 "Invoke URL" + "/status" + query string을 입력시 아래와 같이 정상적으로 200OK와 함께 query string으로 입력했던 deviceid를 Lambda가 정상적으로 읽어 간것을 확인 할 수 있습니다.
+
+![noname](https://user-images.githubusercontent.com/52392004/171851177-7c0d527f-8856-4e7f-91be-2e4c46bfa7f6.png)
+
 
 
 ## Reference 
