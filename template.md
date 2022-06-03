@@ -1,4 +1,4 @@
-## Template 변경시
+## 사용자 정의 Template
 
 querystring으로 등록된 deviceid를 가지고 아래처럼 json파일을 생성할 수 있습니다.
 
