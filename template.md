@@ -2,6 +2,9 @@
 
 [RESTful API에 Query String 사용하기](https://github.com/kyopark2014/apigw-rest-querystring/blob/main/query-string.md)에 사용한 template을 변경하여, querystring으로 등록된 deviceid를 가져오는 event 구조를 용도에 맞게 변경하여 사용 할 수 있습니다. 
 
+
+야래의 template을 등록합니다.
+
 ```java
 #set($inputRoot = $input.path('$'))
 {
@@ -11,7 +14,8 @@
 }
 ```
 
-이 경우에 event는 아래와 같이 전달 됩니다.
+이 경우에 아래와 같은 event가 lamba-for-status로 전달됩니다.
+
 ```java
 {
     "queryStringParameters": {
@@ -20,7 +24,7 @@
 }
 ```
 
-이때는 아래와 같이 lambda-for-status를 변경하여 parsing 합니다.
+lambda-for-status에서는 아래처럼 deviceid를 parsing하여 사용할 수 있습니다. 
 
 ```java
 exports.handler = async (event) => {
