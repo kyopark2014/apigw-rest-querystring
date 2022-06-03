@@ -61,6 +61,10 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 ![noname](https://user-images.githubusercontent.com/52392004/171767662-fae7a997-f046-4b4e-a388-0cf31e8fccfe.png)
 
 
+기본 제공되는 template을 아래와 같이 변경 할 수도 있습니다.
+
+
+
 ## 수정된 API Gateway 배포
 
 1) 아래처럼 [Actions] - [Deploy API]를 선택합니다.
@@ -135,8 +139,55 @@ https://ap-northeast-2.console.aws.amazon.com/apigateway/main/apis?region=ap-nor
 ```
 
 
+## Template 변경시
 
+querystring으로 등록된 deviceid를 가지고 아래처럼 json파일을 생성할 수 있습니다.
 
+```java
+#set($inputRoot = $input.path('$'))
+{
+    "queryStringParameters": {
+        "deviceid": "$input.params('deviceid')"
+    }
+}
+```
+
+이 경우에 event는 아래와 같이 전달 됩니다.
+```java
+{
+    "queryStringParameters": {
+        "deviceid": "a1234567890"
+    }
+}
+```
+
+이때는 아래와 같이 lambda-for-status를 변경하여 parsing 합니다.
+
+```java
+exports.handler = async (event) => {
+    console.log('## ENVIRONMENT VARIABLES: ' + JSON.stringify(process.env));
+    console.log('## EVENT: ' + JSON.stringify(event))
+    
+    if(event['queryStringParameters']) {
+        let deviceid = event['queryStringParameters'].deviceid;
+        
+        const response = {
+            statusCode: 200,
+            body: JSON.stringify({
+                'deviceid': deviceid
+            }),
+        };
+        return response;
+    }
+    else {
+        const response = {
+            statusCode: 200,
+            body: "no querystring",
+        };
+        return response;
+    }
+};
+```
 
 
 
