@@ -25,7 +25,7 @@ Template은 [VTL(Apache Velocity Template Language)](https://docs.aws.amazon.com
 
 ### CDK로 인프라 설치 
 
-typescript로 CDK를 구성합니다.
+여기서는 typescript로 작성된 CDK Source를 이용합니다. 
 
 1) 소스 다운로드 
 
