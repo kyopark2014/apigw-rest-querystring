@@ -50,7 +50,7 @@ export class CdkRestapiStack extends Stack {
     // define api gateway
     const stage = "dev";
     const apigw = new apiGateway.RestApi(this, 'api-status', {
-      description: 'API Gateway',
+      description: 'REST API',
       endpointTypes: [apiGateway.EndpointType.REGIONAL],
       defaultMethodOptions: {
         authorizationType: apiGateway.AuthorizationType.NONE
