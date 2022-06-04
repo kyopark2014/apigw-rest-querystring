@@ -41,7 +41,7 @@ $ cdk synth
 $ cdk deploy
 ```
 
-deploy(배포)후에 아래와 같이 endpoint url과 api query example을 확인 할 수 있습니다.
+deploy(배포)후에 아래와 같이 Invoke URL(endpoint url)과 api query example을 확인 할 수 있습니다.
 
 ![noname](https://user-images.githubusercontent.com/52392004/172028758-1920ea13-5d0d-4373-9c59-8d48529ab10f.png)
 
