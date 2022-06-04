@@ -54,7 +54,8 @@ deploy(배포)후에 아래와 같이 Invoke URL(endpoint url)과 api query exam
 
 Postman을 통해 "Invoke URL" + "/status" + query string을 입력시 아래와 같이 정상적으로 200OK와 함께 query string으로 입력했던 deviceid를 Lambda가 정상적으로 읽어 간것을 확인 할 수 있습니다.
 
-![noname](https://user-images.githubusercontent.com/52392004/171851177-7c0d527f-8856-4e7f-91be-2e4c46bfa7f6.png)
+![noname](https://user-images.githubusercontent.com/52392004/172028837-5aa1ad1d-088f-4337-bf56-6e28c8709faa.png)
+
 
 
 
