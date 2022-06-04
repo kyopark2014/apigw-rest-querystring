@@ -21,7 +21,7 @@ export class CdkRestapiStack extends Stack {
       environment: {
       }
     }); 
-    new cdk.CfnOutput(this, 'LambdaStatusARN', {
+    new cdk.CfnOutput(this, 'LambdaStatusARN', { // lambda arn
       value: lambdaStatus.functionArn,
       description: 'The arn of lambda for status',
     });
@@ -32,13 +32,11 @@ export class CdkRestapiStack extends Stack {
     });
     logGroup.grantWrite(new iam.ServicePrincipal('apigateway.amazonaws.com')); 
 
-
     // api-role
-    const role = new iam.Role(this, "api-role", {
-      roleName: "ApiRole",
+    const role = new iam.Role(this, "rest-api-role", {
+      roleName: "RestApiRole",
       assumedBy: new iam.ServicePrincipal("apigateway.amazonaws.com")
     });
-
     role.addToPolicy(new iam.PolicyStatement({
       resources: ['*'],
       actions: ['lambda:InvokeFunction']
@@ -49,13 +47,12 @@ export class CdkRestapiStack extends Stack {
 
     // define api gateway
     const stage = "dev";
-    const apigw = new apiGateway.RestApi(this, 'api-status', {
-      description: 'REST API',
+    const apigw = new apiGateway.RestApi(this, 'ApiStatus', {
+      description: 'API Gateway for RESTful Query URL',
       endpointTypes: [apiGateway.EndpointType.REGIONAL],
       defaultMethodOptions: {
         authorizationType: apiGateway.AuthorizationType.NONE
       },
-      binaryMediaTypes: ['*/*'], 
       deployOptions: {
         stageName: stage,
         accessLogDestination: new apiGateway.LogGroupLogDestination(logGroup),
@@ -83,11 +80,12 @@ export class CdkRestapiStack extends Stack {
       'application/json': templateString,
     };
 
-    const status = apigw.root.addResource('status');
+    let apiName = 'status';
+    const status = apigw.root.addResource(apiName);
 
     status.addMethod('GET', new apiGateway.LambdaIntegration(lambdaStatus, {
       passthroughBehavior: apiGateway.PassthroughBehavior.WHEN_NO_TEMPLATES,  // options: NEVER
-    //  requestTemplates: requestTemplates,
+      requestTemplates: requestTemplates,
       credentialsRole: role,
       integrationResponses: [{
         statusCode: '200',
@@ -106,10 +104,12 @@ export class CdkRestapiStack extends Stack {
         }
       ]
     });
-    
-    new cdk.CfnOutput(this, 'apiUrl', {
-      value: apigw.url,
-      description: 'The url of API Gateway',
+
+    // query url of "status" api
+    let deviceid = 'a1234567890'; // example 
+    new cdk.CfnOutput(this, 'QueryUrl', {
+      value: apigw.url+'/'+apiName+'?deviceid='+deviceid,
+      description: 'example query url of API',
     });
   }
 }
