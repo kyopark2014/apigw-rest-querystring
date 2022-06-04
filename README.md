@@ -56,6 +56,9 @@ Postman을 통해 "Invoke URL" + "/status" + query string을 입력시 아래와
 
 ![noname](https://user-images.githubusercontent.com/52392004/172028837-5aa1ad1d-088f-4337-bf56-6e28c8709faa.png)
 
+Chrome과 같은 브라우저에서도 아래와 같이 동일한 동작을 확인 할 수 있습니다. 
+
+![image](https://user-images.githubusercontent.com/52392004/172028995-8baf571d-3379-4a47-8580-2fd41b0d9180.png)
 
 
 
