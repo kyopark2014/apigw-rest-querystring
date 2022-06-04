@@ -1,6 +1,6 @@
 # API Gateway로 Qeury string을 포함한 RESTful API 구현하기 
 
-API Gateway는 Client와 Service 사이에 있으면서 reverse proxy로 동작하면서 client에서 service로의 routing을 합니다. 또한 인증, SSL 처리, 보안과 관련 작업을 할 수 있습니다. 여기에서는 API Gateway를 이용해 query string이 가능한 RESTful API 서버를 [AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용해 만드는것을 보여줍니다.
+API Gateway는 Client와 Service 사이에 있으면서 reverse proxy로 동작하면서 client에서 service로의 routing을 합니다. 또한 인증, SSL 처리, 보안과 관련 작업을 할 수 있습니다. 여기에서는 API Gateway를 이용해 query string이 가능한 RESTful API 서버를 Consol과 [AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용해 만드는것을 보여줍니다.
 
 ## 1. AWS Console로 구현하기 
 
