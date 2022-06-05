@@ -6,9 +6,13 @@
 exports.handler = async (event) => {
     console.log('## ENVIRONMENT VARIABLES: ' + JSON.stringify(process.env));
     console.log('## EVENT: ' + JSON.stringify(event))
+```
+
+
+event에는 querystring으로 입력된 "deviceid" 정보가 있습니다. "event['deviceid']"로 parsing하여 이 값을 return 할때 body에 포함하여 전달합니다. 
 
 ```java
-if(event['deviceid']) {
+    if(event['deviceid']) {
         let deviceid = event['deviceid'];
         
         const response = {
