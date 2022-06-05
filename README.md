@@ -21,7 +21,7 @@ Template은 [VTL(Apache Velocity Template Language)](https://docs.aws.amazon.com
 
 ## 2. AWS CDK로 구현하기
 
-[AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용하여 Infra Structure를 배포합니다. 
+[AWS CDK](https://github.com/kyopark2014/technical-summary/blob/main/cdk-introduction.md)를 이용하여 Infra Structure를 배포합니다. [API Gateway를 이용해 Querystring을 지원하는 RESTful API 만들기](https://github.com/kyopark2014/apigw-rest-querystring/tree/main/cdk-restapi)에서는 CDK로 정의한 인프라에 대해 설명하고 있습니다. 
 
 ### CDK로 인프라 설치 
 
