@@ -1,4 +1,4 @@
-# API Gateway를 이용해 Querystring을 지원하는 RESTful API 만들기
+# CDK로 Querystring을 지원하는 RESTful API 만들기
 
 여기서는 Querystring을 지원하는 RESTful API를 API Gateway를 만드는것을 CDK로 구현하는 방법에 대해 설명합니다.
 
